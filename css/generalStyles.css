@@ -1,0 +1,551 @@
+/*-------------------COMMON STYLES-------------------*/
+@font-face {
+    font-family: 'Lemon Tuesday';
+    src: url(../font/LemonTuesday/LemonTuesday.otf);
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+    src: url(Gilroy-Black.ttf); 
+	font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-ExtraBold.ttf);
+	font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-Heavy.ttf); 
+	font-weight: 1000;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-Light.ttf); 
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-Medium.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-SemiBold.ttf);
+	font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-Thin.ttf); 
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Gilroy'; 
+	src: url(Gilroy-UltraLight.ttf); 
+	font-weight: 250;
+}
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body{
+    background: url('../img/newBackground.png');
+	background-size: cover;
+	height: 100%;
+	font-family: 'Gilroy';
+    color: #232323;
+}
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+}
+._container{
+	max-width: 1180px;
+	margin: 0px auto;
+	padding: 0px 10px;
+    box-sizing: content-box;
+}
+@media(max-width: 375px) {
+	._container{
+		max-width: 335px;
+		margin: 0px auto;
+		padding: 0px 10px;
+		box-sizing: content-box;
+	}
+}
+
+/*-------------------BLOCK HEADER-------------------*/
+
+.main-block__block-header{
+	font-family: 'Lemon Tuesday';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 65px;
+	color: #232323;
+	margin-bottom: 40px;
+}
+
+@media(max-width: 375px) {
+	.main-block__block-header{
+		font-size: 35px;
+		line-height: 52px;
+		/* margin-top: -8%; */
+	}
+}
+
+/*-------------------HEADER-------------------*/
+.header{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.header:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+.header__body{
+	display: flex;
+	position: relative;
+	justify-content: start;
+	height: 105px;
+	align-items: center;
+}
+.header__logo
+{
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
+	text-decoration: none;
+}
+.header__logo img
+{
+	display: block;
+    max-width: 100%;
+	min-width: 30%;
+	margin-bottom: 17px;
+}
+.header__burger{
+   display: none;
+}
+.header__list{
+    display:flex;
+    z-index: 2;
+    position:relative;
+	list-style: none;
+	margin: 0px 0px 0px 100px;
+    min-width: 275px;
+    justify-content: space-between;
+}
+
+.header__menu{
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+}
+.header__link{
+    color: #232323;
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.header__link:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+.header__link:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: #CA1B1D; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+@media(max-width: 375px) {
+	.header__list{
+		margin: 0px 0px 0px 0px;
+		min-width: 170px;
+		justify-content: space-between;
+	}
+	.header__body{
+		justify-content: space-between;
+		height: 80px;
+	}
+	.header__logo img{
+		max-width: 70%;
+	}
+	.header__menu{
+		font-size: 10px;
+		line-height: 12px;
+	}
+}
+
+/*-------------------FOOTER-------------------*/
+
+.footer__row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	margin-bottom: 90px;
+}
+
+.footer__column:nth-child(2),
+.footer__column:nth-child(3)
+{
+    padding: 20px 0px;
+    min-width:auto;
+}
+.footer__label{
+    color: #000;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 38px;
+    text-align: center
+}
+.menu-footer__item{
+    list-style-type: none;
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	color: #232323;
+	margin-bottom: 10px;
+}
+.socials-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.menu-footer__link{
+    color: #232323;
+    display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.menu-footer__link:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+.menu-footer__link:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: #CA1B1D; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+
+.without-underline:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 0px !important; /* Высота линии */ 
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+.without-underline:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 0px !important; /* Высота линии */
+    background-color: #CA1B1D; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+
+
+.contacts-footer{
+    display:flex;
+    flex-direction: column;
+}
+
+.contacts-footer__item:hover:first-child{
+    text-decoration: none;
+}
+
+.contacts-footer__item{
+	margin-bottom: 10px;
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	color: #232323;
+    display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.contacts-footer__item:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+.contacts-footer__item:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: #CA1B1D; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+	-webkit-transition: width 0.5s;
+	-ms-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+}
+
+.socials__link{
+	height: 22px;
+	width: 24px;
+	margin-right: 10px;
+}
+.instagram-link{
+	background: url(../img/instagram.svg) no-repeat;
+} 
+
+.telegram-link{
+	background: url(../img/telegram.svg) no-repeat;
+}
+
+.facebook-link{
+	background: url(../img/facebook.svg) no-repeat;
+}
+
+@media(max-width: 375px) {
+
+	.menu-footer__link img{
+		width: 70%;
+	}
+
+	.footer__row{
+		margin-bottom: 25px;
+		flex-wrap: nowrap;
+	}
+
+	.menu-footer__item {
+		font-size: 10px;
+		line-height: 12px;
+		margin-bottom: 6px;
+	}
+
+	.socials-container {
+		zoom: 0.5;
+	}
+
+	.contacts-footer__item{
+		margin-bottom: 6px;
+		font-size: 10px;
+		line-height: 12px;
+	}
+}
+
+/*-------------------PRELOADER-------------------*/
+.preloader {
+	/*фиксированное позиционирование*/
+	position: fixed;
+	/* координаты положения */
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/* фоновый цвет элемента */
+	background: #F3E8D6;
+	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+	z-index: 1001;
+  }
+  
+  .preloader__row {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 70px;
+	height: 70px;
+	margin-top: -35px;
+	margin-left: -35px;
+	text-align: center;
+	animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	background-color: #CA1B1D;
+	border-radius: 100%;
+	width: 35px;
+	height: 35px;
+	animation: preloader-bounce 2s infinite ease-in-out;
+  }
+  
+  .preloader__item:last-child {
+	top: auto;
+	bottom: 0;
+	animation-delay: -1s;
+  }
+  
+  @keyframes preloader-rotate {
+	100% {
+	  transform: rotate(360deg);
+	  -webkit-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes preloader-bounce {
+  
+	0%,
+	100% {
+	  transform: scale(0);
+	  -webkit-transform: scale(0);
+	  -ms-transform: scale(0);
+	  -moz-transform: scale(0);
+	  -o-transform: scale(0);
+	}
+  
+	50% {
+	  transform: scale(1);
+	  -webkit-transform: scale(1);
+	  -ms-transform: scale(1);
+	  -moz-transform: scale(1);
+	  -o-transform: scale(1);
+	}
+  }
+  
+  .loaded_hiding .preloader {
+	transition: 0.3s opacity;
+	-webkit-transition:0.3s opacity;
+	-ms-transition: 0.3s opacity;
+	-moz-transition:0.3s opacity;
+	-o-transition: 0.3s opacity;
+	opacity: 0;
+  }
+  
+  .loaded .preloader {
+	display: none;
+  }

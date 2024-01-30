@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Flowrence | Каталог</title>
+        <link rel="stylesheet" type="text/css" href="../css/generalStyles.css">
+		<link rel="stylesheet" type="text/css" href="../css/catalog.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link type="Image/x-icon" href="../img/icon-site.png" rel="icon">
+        <script src="../js/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+                <div class="container _container">
+                    <div class="header__body">
+                        <a href="index.html" class="header__logo">
+                            <img src="../img/logoHeader.svg" alt="Flowerence. Цветы с круглосуточной доставкой по Минску">
+                        </a>
+                        <nav class="header__menu">
+                            <ul class="header__list">
+                                <li>
+                                    <a href="catalog.html" class="header__link">КАТАЛОГ</a>
+                                </li>
+                                <li>
+                                    <a href="basket.html" class="header__link">КОРЗИНА</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main class="page">
+                <section class="catalog-block _container">
+                    <p class="main-block__block-header">Каталог</p>
+                    <div class="filters-block _container">
+                        <div class="filters-block__body">
+                            <div class="filter__body-item">
+                                <div class="fil-item__row">
+                                    <p style="margin-bottom: 0px;">Цена от:</p><input type="number" id="minPrice" onchange="getNumberValue()" placeholder="руб" min="1" max="1000"/>
+                                    <p style="margin-bottom: 0px;">до:</p><input type="number" id="maxPrice" onchange="getNumberValue()" placeholder="руб" />
+                                </div>
+                            </div>
+                            <div class="filter__body-item">
+                                <div class="fil-item__row">
+                                    <p style="margin-bottom: 0px;">Сортировать цену:</p>
+                                    <select id="sort" class="sort" onchange="getValue(this)">
+                                        <option value=""></option>
+                                        <option value="price_asc">по возрастанию</option>
+                                        <option value="price_desc">по убыванию</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter__body-item">
+                                <p>Событие:</p>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">День рождения</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Свадьба</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">8 марта</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">14 февраля</label>
+                                </div>
+                            </div>
+                            <div class="filter__body-item">
+                                <p>Основа букета:</p>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Розы</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Хризантемы</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Пионы</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Тюльпаны</label>
+                                </div>
+                            </div>
+                            <div class="filter__body-item">
+                                <p>Варианты упаковки</p>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Пленка</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Сетка</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Бумага</label>
+                                </div>
+                                <div class="fil-item__row">
+                                    <input type="checkbox" id="bday" name="bday">
+                                    <label for="bday">Лента</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-block__body" id="paginated-list" data-current-page="1" aria-live="polite">
+                        <script src="../js/cards.js"></script>
+                    </div>
+
+                    <nav class="pagination-container">
+                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                          &lt;
+                        </button>
+                    
+                        <div id="pagination-numbers"></div>
+                    
+                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                          &gt;
+                        </button>
+                    </nav>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer__main _container">
+                    <div class="footer__row">
+                        <div class="footer__column">
+                            <nav class="footer__menu menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item">
+                                        <a href="index.html" class="menu-footer__link without-underline">
+                                            <img src="../img/logoFooter.svg" alt="Flowerence. Цветы с круглосуточной доставкой по Минску">
+                                        </a>
+                                    </li>
+                                    <li class="menu-footer__item"><a
+                                            href="index.html" class="menu-footer__link without-underline" style="text-decoration: none;">Цветы с
+                                            круглосуточной <br> доставкой по Минску</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <nav class="footer__menu menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a href="catalog.html" class="menu-footer__link">КАТАЛОГ</a></li>
+                                    <li class="menu-footer__item"><a href="basket.html" class="menu-footer__link">КОРЗИНА</a></li>
+                                    <li class="menu-footer__item socials-container">
+                                        <a class="socials__link instagram-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                        <a class="socials__link telegram-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                        <a class="socials__link facebook-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <div class="footer__contacts contacts-footer">
+                                <p class="contacts-footer__item">г. Минск, ул. Куйбышева, 22</p>
+                                <a href="tel:336703056" class="contacts-footer__item">+375 (33)
+                                    670-30-56</a>
+                                <a href="mailto:flowers.by@gmail.com"
+                                    class="contacts-footer__item">flowers.by@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../js/preloader.js"></script>
+        <script type="text/javascript" src="../js/pagination.js"></script>
+    </body>
+</html>

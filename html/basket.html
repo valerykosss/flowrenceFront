@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Flowrence | Корзина</title>
+        <link rel="stylesheet" type="text/css" href="../css/generalStyles.css">
+		<link rel="stylesheet" type="text/css" href="../css/basket.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link type="Image/x-icon" href="../img/icon-site.png" rel="icon">
+        <script src="../js/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+                <div class="container _container">
+                    <div class="header__body">
+                        <a href="index.html" class="header__logo">
+                            <img src="../img/logoHeader.svg" alt="Flowerence. Цветы с круглосуточной доставкой по Минску">
+                        </a>
+                        <nav class="header__menu">
+                            <ul class="header__list">
+                                <li>
+                                    <a href="catalog.html" class="header__link">КАТАЛОГ</a>
+                                </li>
+                                <li>
+                                    <a href="basket.html" class="header__link">КОРЗИНА</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main class="page">
+                <section class="basket-block _container">
+                    <p class="main-block__block-header">Корзина</p>
+                    <div class="basket-items__body">
+                        <div class="basket-titles__row">
+                            <div class="title-photo">Фото</div>
+                            <div class="title-name">Название букета</div>
+                            <div class="title-price">Цена</div>
+                            <div class="title-quantity">Количество</div>
+                            <div class="title-totalPrice">Сумма</div>
+                            <div class="title-delete">Удалить</div>
+                        </div>
+                        <div id="basket-item__row" class="basket-item__row">
+                            <img class="item-photo" src="../img/basket1.svg"/>
+                            <!-- <img class="item-photo"/> -->
+                            <div class="item-name">Букет "Цветущий сад"</div>
+                            <!-- <div class="item-name"></div> -->
+                            <div class="item-price">2000$</div>
+                            <!-- <div class="item-price"></div> -->
+                            <div class="item-quantity">
+                                <input type="button" class='minus' id="buttonCountMinus" value="-">
+                                <div class='count' id="buttonCountNumber">1</div>
+                                <input class='plus' type="button" id="buttonCountPlus" value="+">
+                            </div>
+                            <div class="item-totalPrice" id="calculation">130</div>
+                            <a href="#" onclick="hideRow()" class="item-delete">
+                                <img src="../img/basketCross.svg">
+                            </a>
+                        </div>
+                        <div class="basket__total-cost"> Общая стоимость заказа: <span style="font-weight: 600;" id="totalCalculation">130</span></div>
+                        <a class="container-info__button" href="order.html">К оформлению</a>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer__main _container">
+                    <div class="footer__row">
+                        <div class="footer__column">
+                            <nav class="footer__menu menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item">
+                                        <a href="index.html" class="menu-footer__link">
+                                            <img src="../img/logoFooter.svg" alt="Flowerence. Цветы с круглосуточной доставкой по Минску">
+                                        </a>
+                                    </li>
+                                    <li class="menu-footer__item"><a
+                                            href="index.html" class="menu-footer__link" style="text-decoration: none;">Цветы с
+                                            круглосуточной <br> доставкой по Минску</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <nav class="footer__menu menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a href="catalog.html" class="menu-footer__link">КАТАЛОГ</a></li>
+                                    <li class="menu-footer__item"><a href="basket.html" class="menu-footer__link">КОРЗИНА</a></li>
+                                    <li class="menu-footer__item socials-container">
+                                        <a class="socials__link instagram-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                        <a class="socials__link telegram-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                        <a class="socials__link facebook-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <div class="footer__contacts contacts-footer">
+                                <p class="contacts-footer__item">г. Минск, ул. Куйбышева, 22</p>
+                                <a href="tel:336703056" class="contacts-footer__item">+375 (33)
+                                    670-30-56</a>
+                                <a href="mailto:flowers.by@gmail.com"
+                                    class="contacts-footer__item">flowers.by@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../js/basket.js"></script>
+        <script src="../js/preloader.js"></script>
+    </body>
+</html>

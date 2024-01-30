@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Flowrence | Заказать </title>
+        <link rel="stylesheet" type="text/css" href="../css/generalStyles.css">
+		<link rel="stylesheet" type="text/css" href="../css/order.css">
+        <link rel="stylesheet" type="text/css" href="../css/orderedWindow.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link type="Image/x-icon" href="../img/icon-site.png" rel="icon">
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+        <script src="../js/showInput.js"></script>
+	</head>
+	<body>
+		<div class="wrapper" id="filter">
+			<header class="header">
+                <div class="container _container">
+                    <div class="header__body">
+                        <a href="index.html" class="header__logo">
+                            <img src="../img/logoHeader.svg" alt="Flowerence. Цветы с круглосуточной доставкой по Минску">
+                        </a>
+                        <nav class="header__menu">
+                            <ul class="header__list">
+                                <li>
+                                    <a href="catalog.html" class="header__link">КАТАЛОГ</a>
+                                </li>
+                                <li>
+                                    <a href="basket.html" class="header__link">КОРЗИНА</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main class="page">
+                <section class="forms-block">
+                    <p class="main-block__block-header _container">Оформление заказа</p>
+                    <div class="forms__body">
+                        <div class="form__row">
+                            <div class="main-block__body-row">
+                                <img src="../img/flower3.svg">
+                            </div>
+                        </div>
+                        <div class="form__row _container">
+                            <div class="forms__body-column">
+                                <div class="form-item">
+                                    <p class="item-name">Выберите тип доставки:</p>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="selfPick-opt" name="delivery" onclick="showInputAdress()">
+                                        <label">Самовывоз по адресу г. Минск, ул. Куйбышева, 22</label>
+                                    </div>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="address-opt" name="delivery" onclick="showInputAdress()">
+                                        <label>Бесплатная доставка по Минску по адресу:</label>
+                                    </div>
+                                    <input type="text" id="address-input" placeholder="Введите адрес доставки"/>
+                                </div>
+                                <div class="form-item">
+                                    <p class="item-name">Выберите тип оплаты:</p>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="payment1" name="payment" onclick="showInputCard()">
+                                        <label>Оплата в пункте самовывоза</label>
+                                    </div>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="payment2" name="payment" onclick="showInputCard()">
+                                        <label>Оплата по ЕРИП по коду услуги: 234567</label>
+                                    </div>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="payment3" name="payment" onclick="showInputCard()">
+                                        <label>Оплата наличными после доставки </label>
+                                    </div>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="payment4" name="payment" onclick="showInputCard()">
+                                        <label>Оплата банковской картой (MIR, Visa, Mastercard) </label>
+                                    </div>
+                                    <input type="text" id="card-input1" placeholder="Номер карты"/>
+                                    <input type="text" id="card-input2" placeholder="Имя владельца"/>
+                                    <input type="text" id="card-input3" placeholder="Срок действия"/>
+                                </div>
+                                <div class="form-item">
+                                    <p class="item-name">Заполните данные заказа:</p>
+                                    <input type="text" placeholder="Введите ФИО заказчика "/>
+                                    <input type="text" id="phone1" placeholder="Введите телефон заказчика"/>
+                                    <input type="text" id="dateTime" placeholder="Введите дату и время доставки"/>
+                                    <input type="text" placeholder="Введите ФИО получателя "/>
+                                    <input type="text" id="phone2" placeholder="Введите телефон получателя"/>
+                                    <p style="margin-bottom:15px">Отправить заказ анонимно?</p>
+                                    <div class="item-column__row">
+                                        <input type="radio" id="yes" name="anonim">
+                                        <label style="margin-right: 20px;">Да</label>
+                                        <input type="radio" id="no" name="anonim">
+                                        <label>Нет</label>
+                                    </div>
+                                    <textarea placeholder="Напишите текст записки"></textarea>
+                                    <textarea placeholder="Оставьте комментарий к заказу"></textarea>
+                                </div>
+                            </div>
+                            <div class="forms__body-column">
+                                <div class="form-item" style="padding-right: 40px;">
+                                    <p class="item-name">Ваш заказ</p>
+                                    <div class="item-column-final__row">
+                                        <p>Товары (4 шт.)</p>
+                                        <p style="font-weight: 600;">520 руб.</p>
+                                    </div>
+                                    <div class="item-column-final__row" style="margin-bottom: 15px;">
+                                        <p>Стоимость доставки</p>
+                                        <p style="color: #CA1B1D; font-weight: 600;">Бесплатно</p>
+                                    </div>
+                                    <div class="item-final__row">
+                                        <p>ИТОГО</p>
+                                        <p style="color: #CA1B1D; font-weight: 600;">520 руб.</p>
+                                    </div>
+                                    <a class="container-info__button" onmousedown="viewDiv()">Заказать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            </div>
+            <div id="ordered-window" class="ordered-window">
+                <a href="../html/catalog.html" class="ordered-window__close">
+                    <img class="ordered-window__close-img" src="../img/cross.svg" />
+                </a>
+                <div class="ordered-window__container _container">
+                    <div href="" class="ordered-window__body">
+                        <p class="ordered__message"><span style="font-weight: 600;"> Ваш заказ принят! <br> Спасибо, что выбрали нас!</p>
+                        <a class="container__button" href="../html/catalog.html">В каталог </a>
+                        </div>
+                    </div>
+                </div>
+            <footer class="footer">
+                <div class="footer__main _container">
+                    <div class="footer__row">
+                        <div class="footer__column">
+                            <nav class="footer__menu menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item">
+                                        <a href="index.html" class="menu-footer__link">
+                                            <img src="../img/logoFooter.svg" alt="Flowerence. Цветы с круглосуточной доставкой по Минску">
+                                        </a>
+                                    </li>
+                                    <li class="menu-footer__item"><a
+                                            href="index.html" class="menu-footer__link" style="text-decoration: none;">Цветы с
+                                            круглосуточной <br> доставкой по Минску</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <nav class="footer__menu menu-footer">
+                                <ul class="menu-footer__list">
+                                    <li class="menu-footer__item"><a href="catalog.html" class="menu-footer__link">КАТАЛОГ</a></li>
+                                    <li class="menu-footer__item"><a href="basket.html" class="menu-footer__link">КОРЗИНА</a></li>
+                                    <li class="menu-footer__item socials-container">
+                                        <a class="socials__link instagram-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                        <a class="socials__link telegram-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                        <a class="socials__link facebook-link" href="#"> </a>
+                                        <a class="telegram-link" href="#"> </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <div class="footer__contacts contacts-footer">
+                                <p class="contacts-footer__item">г. Минск, ул. Куйбышева, 22</p>
+                                <a href="tel:336703056" class="contacts-footer__item">+375 (33)
+                                    670-30-56</a>
+                                <a href="mailto:flowers.by@gmail.com"
+                                    class="contacts-footer__item">flowers.by@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+            // $('.container-info__button').click(function() {
+            //     $('.ordered-window').css("display", "flex");
+            // });
+            function viewDiv(){
+                document.getElementById("ordered-window").style.display = "flex";
+                document.getElementById("filter").style.webkitFilter = "blur(10px)";
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+.error-block {
+    margin-bottom: 110px;
+
+}
+.error-block p:first-child img{
+    max-width: 100%;
+}
+.error-img{
+    text-align: center;
+    margin-top: -70px;
+    position: relative;
+}
+
+.error-img__text{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    color: #232323;
+    text-align: center;
+    margin-top: -6%;
+    margin-bottom: 35px;
+}
+
+/*кнопка заказать*/
+.container-info__button{
+	background: url(../img/btnToFillForms.svg) no-repeat;
+	height: 100px;
+	width: 320px;
+	position: relative;
+	display: inline-block;
+	font-family: 'Gilroy';
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color:#232323;
+	padding: 35px 30px 0px 0px;
+	transition: 0.2s all;
+	-webkit-transition: 0.2s all;
+	-ms-transition: 0.2s all;
+	-moz-transition: 0.2s all;
+	-o-transition: 0.2s all;
+}
+
+.container-info__button::after{
+	content: "\f178";
+	font-family: FontAwesome;
+	position: absolute;
+	width: 40px;
+	text-align: center;
+	transition: 0.2s all;
+	-webkit-transition: 0.2s all;
+	-ms-transition: 0.2s all;
+	-moz-transition: 0.2s all;
+	-o-transition: 0.2s all;
+}
+
+.container-info__button:hover::after{
+	transition: 0.2s all;
+	-webkit-transition: 0.2s all;
+	-ms-transition: 0.2s all;
+	-moz-transition: 0.2s all;
+	-o-transition: 0.2s all;
+
+	transform: translate(7px);
+	-webkit-transform: translate(7px);
+	-ms-transform: translate(7px);
+	-moz-transform: translate(7px);
+	-o-transform: translate(7px);
+}
+
+@media(max-width: 375px) {
+	.error-img__text{
+		font-size: 20px;
+		line-height: 24px;
+		margin-bottom: 20px;
+	}
+	.container-info__button{
+		zoom: 0.6;
+	}
+	.error-block{
+		margin-bottom: 30px;
+	}
+}
